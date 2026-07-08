@@ -7,9 +7,22 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/airowireNetworks/datadog-gitops.git
-    targetRevision: main
-    path: datadog
+    repoURL: https://helm.datadoghq.com
+    chart: datadog
+    targetRevision: 3.120.0
+    helm:
+      values: |
+        datadog:
+          site: datadoghq.com
+          apiKeyExistingSecret: datadog-secret
+          clusterName: onprem-gitops
+
+          logs:
+            enabled: true
+            containerCollectAll: true
+
+        clusterAgent:
+          enabled: true
 
   destination:
     server: https://kubernetes.default.svc
@@ -19,6 +32,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
     syncOptions:
       - CreateNamespace=true
