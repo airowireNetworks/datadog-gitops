@@ -5,18 +5,15 @@ datadog:
 
   clusterName: onprem-gitops
 
-  kubelet:
-    tlsVerify: false
-
-  logs:
-    enabled: true
-    containerCollectAll: true
-
   apm:
     enabled: false
 
   processAgent:
     enabled: false
+
+  logs:
+    enabled: true
+    containerCollectAll: true
 
 clusterAgent:
   enabled: true
