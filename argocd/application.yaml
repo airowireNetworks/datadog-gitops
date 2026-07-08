@@ -19,6 +19,9 @@ spec:
           apiKeyExistingSecret: datadog-secret
           clusterName: onprem-gitops
 
+          kubelet:
+            useApiServer: true
+            tlsVerify: false 
           logs:
             enabled: true
             containerCollectAll: true
