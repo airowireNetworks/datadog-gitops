@@ -1,0 +1,13 @@
+datadog:
+  site: datadoghq.com
+
+  apiKeyExistingSecret: datadog-secret
+
+  clusterName: onprem-gitops
+
+  logs:
+    enabled: true
+    containerCollectAll: true
+
+clusterAgent:
+  enabled: true
