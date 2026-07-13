@@ -18,7 +18,7 @@ spec:
           site: datadoghq.com
           apiKeyExistingSecret: datadog-secret
 
-          clusterName: AKS-Datadog
+          clusterName: AKS-Datadog1
 
 
           kubelet:
