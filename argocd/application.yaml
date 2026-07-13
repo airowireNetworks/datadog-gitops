@@ -18,7 +18,8 @@ spec:
           site: datadoghq.com
           apiKeyExistingSecret: datadog-secret
 
-          clusterName: onprem-gitops
+          clusterName: AKS-Datadog
+
 
           kubelet:
             useApiServer: true
