@@ -17,11 +17,13 @@ spec:
         datadog:
           site: datadoghq.com
           apiKeyExistingSecret: datadog-secret
+
           clusterName: onprem-gitops
 
           kubelet:
             useApiServer: true
-            tlsVerify: false 
+            tlsVerify: false
+
           logs:
             enabled: true
             containerCollectAll: true
@@ -32,8 +34,14 @@ spec:
           processAgent:
             enabled: false
 
+          tags:
+            - env:dev
+            - managed-by:argocd
+
         clusterAgent:
           enabled: true
+          replicas: 2
+          tokenExistingSecret: datadog-cluster-agent-token
 
   destination:
     server: https://kubernetes.default.svc
